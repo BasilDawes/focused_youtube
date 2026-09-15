@@ -305,7 +305,8 @@
     document.body.appendChild(div);
 
     return new Promise(res => {
-        requestAnimationFrame(() => { requestAnimationFrame(() => {  // Call twice to ensure the div is displayed (requestAnimationFrame runs before redraw)
+        // Was calling requestAnimationFrame twice to ensure the div is displayed (requestAnimationFrame runs before redraw), but it stopped working
+        setTimeout(() => {
           const confirmation = prompt('If you wish to continue, copy the onscreen popup') || "";
           if (confirmation === confirmationString) {
             res(true);
@@ -314,7 +315,7 @@
             res(false);
           }
           div.remove();
-        })});
+        }, 50);
     });
   }
 
