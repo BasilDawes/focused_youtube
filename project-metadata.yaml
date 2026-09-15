@@ -1,0 +1,12 @@
+project: true
+completed: true
+archived: false
+era: null
+topic:
+- focus
+- contrib
+technology:
+- web-ext
+language: javascript
+dependencies:
+- chrome
